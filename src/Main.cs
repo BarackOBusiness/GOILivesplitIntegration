@@ -23,10 +23,6 @@ public class LivesplitIntegration : BaseUnityPlugin
         SceneManager.sceneLoaded += OnSceneLoad;
     }
 
-    private void OnDestroy() {
-        time = -3f;
-    }
-
     private void LateUpdate() {
         if ((state & 0b1000) == 8 && !isResetting) {
             StartCoroutine(UnsetResetBit());
